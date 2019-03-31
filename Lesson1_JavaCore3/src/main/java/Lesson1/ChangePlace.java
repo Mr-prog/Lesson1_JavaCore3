@@ -1,10 +1,12 @@
 package Lesson1;
 
+import java.util.Arrays;
+
 public class ChangePlace< Z extends String> {
 
     private Z [] obj3;
-    protected String sym1;
-    protected String sym2;
+    protected Object sym1;
+    protected Object sym2;
 
 
     public ChangePlace(Z obj3[]) {
@@ -13,8 +15,10 @@ public class ChangePlace< Z extends String> {
 
     public void changePlace(int a, int b){
         Object [] array = obj3;
-        array[a] = obj3[b];
-        array[b] = obj3[a];
-        System.out.println(array);
+        sym1 = obj3[b - 1];
+        sym2 = obj3[a - 1];
+        array[a - 1] = sym1;
+        array[b - 1] = sym2;
+        System.out.println(Arrays.toString(array));
     }
 }
